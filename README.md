@@ -7,8 +7,8 @@ This is a Neo-Demo-PostApp project bootstrapped with [`create-next-app`](https:/
 
 This project uses environment variables for configuration. Create a .env file in the root of your project and add the following:
 
-NEXT_PUBLIC_DB_DEV=http://localhost:3000
-NEXT_PUBLIC_DB_PROD=/api
+- NEXT_PUBLIC_DB_DEV=http://localhost:3000
+- NEXT_PUBLIC_DB_PROD=/api
 
 These environment variables control the API endpoint for development and production.
 
