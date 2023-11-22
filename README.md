@@ -1,12 +1,24 @@
 # Neo-Demo-App
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Neo-Demo-PostApp project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+
+## Environment Variables
+
+This project uses environment variables for configuration. Create a .env file in the root of your project and add the following:
+
+NEXT_PUBLIC_DB_DEV=http://localhost:3000
+NEXT_PUBLIC_DB_PROD=/api
+
+These environment variables control the API endpoint for development and production.
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
+npm install
+
 npm run dev
 # or
 yarn dev
@@ -16,7 +28,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
