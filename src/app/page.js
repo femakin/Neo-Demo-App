@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     // Fetch projects from API
     // setloading(true);
-    fetch("http://localhost:3000/projects") // Replace with your actual API endpoint
+    fetch(`${process.env.NEXT_PUBLIC_DB_DEV}/projects`) // Replace with your actual API endpoint
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);
@@ -40,7 +40,7 @@ export default function Home() {
     // Send a request to create a new project
     setloading(true);
     e.preventDefault();
-    fetch("http://localhost:3000/projects", {
+    fetch(`${process.env.NEXT_PUBLIC_DB_DEV}/projects`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ export default function Home() {
 
   const fetchProjects = () => {
     setloading(true);
-    fetch('http://localhost:3000/projects')
+    fetch(`${process.env.NEXT_PUBLIC_DB_DEV}/projects`)
       .then(response => response.json())
       .then(data => {
         setProjects(data);
@@ -90,7 +90,7 @@ export default function Home() {
 
   const handleDeleteProject = (projectId) => {
     setloading(true);
-    fetch(`http://localhost:3000/projects?id=eq.${projectId}`, {
+    fetch(`${process.env.NEXT_PUBLIC_DB_DEV}/projects?id=eq.${projectId}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -115,7 +115,7 @@ export default function Home() {
 
   const handleUpdateProject = (projectId, updatedValues) => {
     setloading(true);
-    fetch(`http://localhost:3000/projects?id=eq.${projectId}`, {
+    fetch(`${process.env.NEXT_PUBLIC_DB_DEV}/projects?id=eq.${projectId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ export default function Home() {
       })
       .then(() => {
         setloading(false);
-        fetchProjects();
+        // fetchProjects();
         setShowUpdateModal(false);
         window.location.reload();
       })
